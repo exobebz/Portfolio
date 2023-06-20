@@ -1,19 +1,10 @@
-body {
-	font-family: Arial, sans-serif;
-	background-color: #f9f9f9;
-	color: #333;
-	margin: 0;
-	padding: 0;
-}
 
-header {
-	background-color: #FFA07A;
-	color: #fff;
-	padding: 20px;
-}
-
-header h1 {
+h1 {
 	margin: 0;
+	font-size: 1.2rem;
+	font-weight: lighter;
+	width: 18rem;
+	text-align: center;
 }
 
 main {
@@ -39,8 +30,16 @@ li {
 	margin-bottom: 10px;
 }
 
+.list-with-dots li::before {
+	content: "• ";
+	color: #FFA07A;
+	font-weight: bold;
+	margin-right: 5px; /* Increase the right margin for spacing */
+  }
+
 a {
 	color: #FFA07A;
+	text-decoration: none;
 }
 
 label {
@@ -75,6 +74,9 @@ header {
 	background-color: #333;
 	color: #fff;
 	padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -133,30 +135,102 @@ footer {
 	text-align: center;
 }
 
-@media (max-width: 768px) {
-	header {
-		font-size: 20px;
-		padding: 10px;
-	}
 
-	h1 {
-		font-size: 24px;
-	}
-
-	h2 {
-		font-size: 20px;
-	}
-
-	section {
-		padding: 10px;
-	}
-}
 nav ul {
 	display: flex;
+}
+
+
+nav ul li {
+	width: 16.6%;
+	margin-right: 5px;
+	height: 50px;
+	background-color: #141414;
+	font-size: 0.6rem;
   }
   
-  nav ul li {
-	width: 25%;
+  nav ul li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	color: #FFA07A;
+	text-decoration: none;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  }
+
+nav ul li:last-child {
+	margin-right: 0;
+}
+header {
+	position: relative;
+}
+
+.small-rectangle {
+	position: absolute;
+	top: 0.75rem;
+	right: 1.2rem;
+	max-width: 10%;
+	height: auto;
+}
+.container {
+	padding:10%;
+	display: flex;
+	height: 100vh; /* Adjust the height as needed */
+	box-sizing: border-box;
+	border: 1px solid orangered;
+}
+
+.left-section, .right-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid orangered;
+}
+
+.content {
+	padding-left:10%;
+  text-align: left;
+  border: 1px solid orangered;
+}
+.left-section .content::before {
+	content: "";
+	position: absolute;
+	left: -10px;
+	top: 0;
+	bottom: 0;
+	width: 10px;
+	background: linear-gradient(to bottom, #f2f2f2, #101010);
+  }
+@media (min-width: 768px) {
+.small-rectangle {
+	top: 1.25rem;
+	right: 3.125rem;
+	max-width: 5rem; /* Adjust the value based on your desired maximum width */
+}
+header {
+	font-size: 20px;
+	padding: 10px;
+	height: 5.8rem;
+}
+
+h1 {
+	font-size: 44px;
+	width: 80rem;
+}
+
+h2 {
+	font-size: 20px;
+}
+
+section {
+	padding: 10px;
+}
+nav ul li {
+	width: 16.6%;
 	margin-right: 5px;
 	height: 50px;
 	background-color: #141414;
@@ -164,18 +238,6 @@ nav ul {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-  }
-  
-  nav ul li:last-child {
-	margin-right: 0;
-  }
-  header {
-	position: relative;
-  }
-  
-  .small-rectangle {
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	height: 50px;
-  }
+	font-size: 1.2rem;
+}
+}
